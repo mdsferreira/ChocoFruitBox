@@ -1,26 +1,22 @@
 from django.db import models
+from custumer.models import Custumer
 
 class Bill(models.Model):
     value = models.FloatField(null=False, blank=False, verbose_name='Total Value')
     payday = models.DateField(null=True, blank=True, verbose_name='Payday')    
+    discount = models.FloatField(null=False, blank=False, verbose_name='Total Value')
 
-class Order(models.Model):
-    bulling_day = models.IntegerField(null=False, blank=False, verbose_name='Bulling Day')
-    is_subscriber = models.BooleanField(blank=False, verbose_name='Subscriber')
+    def __str__(self):
+        return self.value
+
+class Order(models.Model):    
+    custumer = models.ForeignKey(Custumer, models.PROTECT, null=True, blank=True, verbose_name='Bill')
     bill = models.ForeignKey(Bill, models.PROTECT, null=True, blank=True, verbose_name='Bill')
+    order_date = models.IntegerField(null=False, blank=False, verbose_name='Bulling Day')
+    order_number = models.CharField(max_length=100, null=False, blank=False, verbose_name='Order Number')
 
-class Fruit(models.Model):
-    name = models.CharField(max_length=250, null=False, blank=False, verbose_name='Name')
-    is_active = models.BooleanField(blank=False, verbose_name='Active')
+    def __str__(self):
+        return self.order_number + '/' + str(self.custumer)
 
-class ChocolateType(models.Model):
-    description = models.CharField(max_length=250, null=False, blank=False, verbose_name='Description')
-    is_active = models.BooleanField(blank=False, verbose_name='Active')
 
-class Chocolate(models.Model):
-    name = models.CharField(max_length=250, null=False, blank=False, verbose_name='Name')
-    description = models.CharField(max_length=250, null=True, blank=True, verbose_name='Description')
-    chocolate_type = models.ForeignKey(ChocolateType, models.PROTECT, null=False, blank=False, verbose_name='Chocolate type')
-    fruit = models.ForeignKey(ChocolateType, models.PROTECT, null=False, blank=False, verbose_name='Fruit')
-    is_active = models.BooleanField(blank=False, verbose_name='Active')
 

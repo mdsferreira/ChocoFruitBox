@@ -1,28 +1,184 @@
-.App {
-  text-align: center;
+
+body {
+  font-family: Roboto,sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #555;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+a {
+  color: #4a4a4a;
+  transition: all .3s;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 
-.App-title {
-  font-size: 1.5em;
+section {
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
-.App-intro {
-  font-size: large;
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.section-title{
+  margin-bottom: 40px;
+  font-size: 36px;
+  line-height: 42px;
+  font-family: Roboto Mono,monospace;
+}
+
+.section__description {
+  margin-bottom: 30px;
+}
+
+.home-body{
+  background-image:url('box_menu.JPG');
+  background-color: #cccccc;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-position: center; 
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+}
+
+.home-label{
+  margin-top: 40px;
+  text-align: right;
+  color: #39222c;
+}
+
+.personal-home {
+  color: #fff;
+  font-family: Roboto Mono,monospace;
+  padding-top: 90px;
+}
+
+.home-brand {
+  font-size: 44px;
+  line-height: 50px;
+  font-weight: 700;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.home-slogan {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 40px;
+  color: #39222c7a;
+}
+
+.home-social {
+  margin-bottom: 35px;
+  color: #fff;
+  font-family: Roboto Mono,monospace;
+  padding-top: 90px;
+}
+
+.css-1tr4ugw .css-692fgp{
+  color: #9a9696;
+  box-shadow: inset 0 0 0 0em #ef795a;
+  display: inline-block;
+  margin-bottom: 1.2em;
+  padding: 0.25em 1em 0.2em 0em;
+  background-color: #ffffff;
+}
+
+.home-social a{
+  color: #39222c;
+  font-size: 20pt;
+  margin-right: 10px;
+}
+
+.css-1psltl0 .css-vcfpfv{
+  background-color: #39222c;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+ol, ul {
+  padding: 0;
+  list-style: none;
+}
+
+nav ul li a {
+  padding-right: 50px;
+  color: #999;
+}
+
+nav ul li a:hover {
+  padding-right: 50px;
+  color: #39222c;
+}
+
+.menu.menu--active .menu-wrapper {
+  margin-top: 25px;
+}
+
+.menu.menu--active .menu-wrapper a {
+  color: #555!important;
+  opacity: 1;
+}
+
+.menu .menu-wrapper a {
+  color: #555!important;
+  opacity: 1;
+}
+
+.menu .menu-wrapper a:hover {
+  color: #39222c!important;
+  opacity: 1;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.menu .menu-wrapper {
+  margin-top: 25px;
+}
+
+.menu .menu-wrapper nav {
+  font-size: 14px;
+  line-height: 20px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  text-transform: uppercase;
+}
+
+.menu.menu--active {
+  background-color: #fff;
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,.14);
+}
+
+.menu{
+  position: fixed;
+  padding: 0;
+  height: 0;
+  top: 0;
+  z-index: 100;
+  width: 101%;
+  height: 70px;
+  transition: all .5s;
+  background-color: #fff;
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,.14);
+}
+
+.footer-body{
+  background-color: #39222c;
+  height: 10%;  
 }

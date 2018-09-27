@@ -20,7 +20,7 @@ class Address(models.Model):
     def __str__(self):
         return str(self.address) +', '+str(self.city)+', '+str(self.state)
 
-class Custumer(models.Model):
+class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='User')
     bulling_day = models.IntegerField(null=False, blank=False, verbose_name='Bulling Day')
     subscription = models.ForeignKey(Subscription, models.PROTECT, null=True, blank=True, verbose_name='Subscription')
@@ -42,7 +42,7 @@ class Friend(models.Model):
         return str(self.first_name)+ ' '+ str(self.last_name)
 
 class FruitPreference(models.Model):
-    custumer = models.ForeignKey(Custumer, models.PROTECT, null=False, blank=False, verbose_name='Custumer')
+    custumer = models.ForeignKey(Customer, models.PROTECT, null=False, blank=False, verbose_name='Customer')
     fruit = models.ForeignKey(Fruit, models.PROTECT, null=False, blank=False, verbose_name='Fruit')
     level = models.SmallIntegerField(null=False, blank=False, verbose_name='Preference level')
 
@@ -50,7 +50,7 @@ class FruitPreference(models.Model):
         return str(self.fruit)+ ' pref.: '+ str(self.level)
 
 class ChocolatePreference(models.Model):
-    custumer = models.ForeignKey(Custumer, models.PROTECT, null=False, blank=False, verbose_name='Custumer')
+    custumer = models.ForeignKey(Customer, models.PROTECT, null=False, blank=False, verbose_name='Customer')
     chocolate_type = models.ForeignKey(ChocolateType, models.PROTECT, null=False, blank=False, verbose_name='Chocolate Type')
     level = models.SmallIntegerField(null=False, blank=False, verbose_name='Preference level')
 

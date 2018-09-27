@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
-from custumer import models
+from customer import models
 
 
 @admin.register(models.ChocolatePreference)
@@ -26,9 +26,9 @@ class SubscriptionAdmin(admin.ModelAdmin):
     pass    
 
 class ProfileInline(admin.StackedInline):
-    model = models.Custumer
+    model = models.Customer
     can_delete = False
-    verbose_name_plural = 'Custumer'
+    verbose_name_plural = 'Customer'
     fk_name = 'user'
 
 class CustomUserAdmin(UserAdmin):
@@ -41,6 +41,6 @@ class CustomUserAdmin(UserAdmin):
 admin.site.unregister(User)
 admin.site.register(User, CustomUserAdmin)
 
-@admin.register(models.Custumer)
-class CustumerAdmin(admin.ModelAdmin):
+@admin.register(models.Customer)
+class CustomerAdmin(admin.ModelAdmin):
     pass

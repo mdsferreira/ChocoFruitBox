@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Container } from 'reactstrap';
+import { Container } from 'reactstrap';
 
 const NavBar = (props) => {
     return (
@@ -7,10 +7,10 @@ const NavBar = (props) => {
         <Container>
          <nav> 
           <ul>
-            <li ><a href="#">Home</a></li>
-            <li ><a href="#">About Us</a></li>
-            <li ><a href="#">Exemplos</a></li>
-            <li ><a href="#">Contact</a></li>
+            <li ><a href="/#">Home</a></li>
+            <li onClick={props.focusDescription}><a>About Us</a></li>
+            <li onClick={props.focusExamples}><a>Exemplos</a></li>
+            <li onClick={props.focusFooter}><a>Contact</a></li>
           </ul>
         </nav>
         </Container>

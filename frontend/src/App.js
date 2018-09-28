@@ -6,8 +6,34 @@ import Home from "./components/Home"
 import Description from "./components/Description"
 import Footer from "./components/Footer"
 import Examples from "./components/Examples"
+import ReactDOM from 'react-dom';
 
 class App extends Component {
+  constructor(props) {
+    super(props);    
+    this.examples_ref = React.createRef();
+    this.footer_ref = React.createRef();
+    this.description_ref = React.createRef();
+    this.focusFooter = this.focusFooter.bind(this);
+    this.focusExamples = this.focusExamples.bind(this);
+    this.focusDescription = this.focusDescription.bind(this);
+  }
+
+  focusExamples() {
+    const domNode = ReactDOM.findDOMNode(this.examples_ref.current)    
+    domNode.scrollIntoView()
+  }
+
+  focusFooter() {
+    const domNode = ReactDOM.findDOMNode(this.footer_ref.current)    
+    domNode.scrollIntoView()
+  }
+
+  focusDescription() {
+    const domNode = ReactDOM.findDOMNode(this.description_ref.current)    
+    domNode.scrollIntoView()
+  }
+
   render() {
     return (
       <div className="App">
@@ -15,7 +41,7 @@ class App extends Component {
             <Col>            
               <Row className="menu">
                 <Col >
-                  <NavBar />
+                  <NavBar focusExamples={this.focusExamples} focusFooter={this.focusFooter} focusDescription={this.focusDescription} />
                 </Col>
               </Row>
               <Row className="home-body">
@@ -26,17 +52,16 @@ class App extends Component {
               <Row>
                 <Col className="body-site">
                   <Container>                    
-                    <Description />
+                    <Description  refsection={this.description_ref}/>
                     <hr/>
-                    <Examples />
-                    <hr />
-                    
+                    <Examples refsection={this.examples_ref} />
+                    <hr />                    
                   </Container>
                 </Col>
               </Row>
               <Row className="footer-body">
                 <Col>
-                  <Footer />    
+                  <Footer refsection={this.footer_ref} />    
                 </Col>
               </Row>              
             </Col>

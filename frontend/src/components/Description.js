@@ -1,9 +1,9 @@
 import React from 'react';
-import { Row, Col, Button } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 
 const Description = (props) => {
     return (
-        <section id="hello" > 
+        <section id="hello" ref={props.refsection} > 
         <Row>
           <Col md="10">
             <h2 className="section-title">About Us</h2>

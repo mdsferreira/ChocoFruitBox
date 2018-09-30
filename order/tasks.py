@@ -11,7 +11,6 @@ class sendRemmendationsEmailTask(Task):
     def run(self):
         users = User.objects.all()
         for user in users :
-            recommendation = 1 #SuperChoc.get_recommendations(white_choc=1, dark_choc=3)
             from_email = "chocofruit@chocofruit.com"
             subject, to = "Your recommended ChocoFruit box is ready", user.email
             html_content = '''
